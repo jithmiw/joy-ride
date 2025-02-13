@@ -12,11 +12,12 @@
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
 <header>
     <!--NAVIGATION BAR-->
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-white shadow">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg shadow" style="background-color: black">
         <div class="container-fluid">
             <a class="navbar-brand text-black fw-bolder">
                 <img alt="Logo" class="d-inline-block align-text-top" height="40" src="assets/img/logo.png">
@@ -29,23 +30,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a aria-current="page" class="nav-link active text-black fw-semibold" href="#home">Home</a>
+                        <a aria-current="page" class="nav-link active fw-semibold" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a aria-current="page" class="nav-link active text-black fw-semibold" href=""
+                        <a aria-current="page" class="nav-link active fw-semibold" href=""
                            target="_blank">Vehicle Fleet</a>
                     </li>
                     <li class="nav-item">
-                        <a aria-current="page" class="nav-link active text-black fw-semibold"
+                        <a aria-current="page" class="nav-link active fw-semibold"
                            href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a aria-current="page" class="nav-link active text-black fw-semibold"
+                        <a aria-current="page" class="nav-link active fw-semibold"
                            href="#contact-us">Contact</a>
                     </li>
                     <li class="nav-item">
                         <!-- Login Button trigger modal -->
-                        <a class="nav-link active text-black fw-semibold" data-bs-target="#staticBackdrop1"
+                        <a class="nav-link active fw-semibold" data-bs-target="#staticBackdrop1"
                            data-bs-toggle="modal"
                            style="cursor: pointer">
                             Login
@@ -53,7 +54,7 @@
                     </li>
                 </ul>
                 <!-- Sign Up Button trigger modal -->
-                <button class="btn btn-outline-dark fw-semibold" data-bs-target="#signup-modal" data-bs-toggle="modal"
+                <button class="btn btn-outline-light fw-semibold" data-bs-target="#signup-modal" data-bs-toggle="modal"
                         type="button">
                     Sign Up
                 </button>
@@ -170,20 +171,22 @@
 </header>
 <main>
     <!--HOME SECTION-->
-    <section id="home" style="margin-top: 60px;">
-        <div class="container-fluid mb-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/background.jpg');
+    <section id="home" style="margin-top: 60px;" class="pb-5">
+        <div class="container-fluid px-5 py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/img/background.jpg');
                background-size: cover;
                background-position: center;
-               background-repeat: no-repeat;
-               height: 500px;">
-            <div class="d-flex align-items-center justify-content-center text-center text-white p-5">
-                <div class="px-5 mt-5">
-                    <h1 class="fs-1 fw-bold mb-3">Looking for a vehicle? You’re at the right place.</h1>
-                    <p class="fs-5 my-5">With 10 years of experience in the industry, we strive to offer the highest
-                        levels of customer service <br> and provide a highly personalized experience <br> for all our
-                        customers who are seeking reliable, convenient, and tailored vehicle rental solutions.</p>
-                    <a class="btn btn-lg px-4 py-2 rounded-3 fw-bold" style="background-color: #FFAB00" data-bs-target="#signup-modal" data-bs-toggle="modal">Rent Your
-                        Ride</a>
+               background-repeat: no-repeat;">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center my-5">
+                        <p class="display-5 fw-bolder text-white mb-3">Looking for a vehicle? You’re at the right place.</p>
+                        <p class="lead text-white mb-5">With 10 years of experience in the industry, we strive to offer the highest
+                            levels of customer service and provide a highly personalized experience for all our
+                            customers who are seeking reliable, convenient, and tailored vehicle rental solutions.</p>
+                        <div class="d-grid d-sm-flex justify-content-sm-center">
+                            <a class="btn btn-lg px-4 fw-semibold" style="background-color: #FFAB00" data-bs-target="#signup-modal" data-bs-toggle="modal">Get Started</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,9 +249,12 @@
                     <h6 class="text-uppercase fw-bold">Features</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto"
                         style="width: 60px; background-color: #828282; height: 2px"/>
-                    <p class="fw-semibold"><i class="bi bi-coin"></i> No Hidden Fees</p>
-                    <p class="fw-semibold"><i class="bi bi-car-front"></i> Wide Range of Vehicles</p>
-                    <p class="fw-semibold"><i class="bi bi-clock"></i> 24/7 Service</p>
+<!--                    <p class="fw-semibold vertical-center"><i class="bi bi-coin"></i> No Hidden Fees</p>-->
+<!--                    <p class="fw-semibold vertical-center"><i class="bi bi-car-front"></i> Wide Range of Vehicles</p>-->
+                    <p class="fw-semibold vertical-center"><i class="bi bi-car-front"></i> Easy Online Booking</p>
+                    <p class="fw-semibold vertical-center"><i class="bi bi-shield-lock"></i> Secure and Reliable</p>
+                    <p class="fw-semibold vertical-center"><i class="bi bi-calendar-check"></i> Flexible Rental Periods</p>
+                    <p class="fw-semibold vertical-center"><i class="bi bi-clock"></i> 24/7 Service</p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <!-- LINKS -->

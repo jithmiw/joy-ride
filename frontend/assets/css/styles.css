@@ -1,0 +1,10 @@
+.vertical-center {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.vertical-center i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
