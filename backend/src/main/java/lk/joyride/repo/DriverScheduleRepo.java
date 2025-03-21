@@ -1,0 +1,22 @@
+package lk.joyride.repo;
+
+import lk.joyride.entity.DriverSchedule;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface DriverScheduleRepo extends JpaRepository<DriverSchedule, String> {
+
+    @Query(value = "SELECT schedule_id FROM DriverSchedule ORDER BY schedule_id DESC LIMIT 1", nativeQuery = true)
+    String getLastScheduleId();
+
+    @Query(value = "SELECT driver_nic FROM DriverSchedule WHERE rental_id=?1", nativeQuery = true)
+    String getDriverNicByRentalId(String rental_id);
+
+    @Query(value = "SELECT * FROM DriverSchedule WHERE rental_id=?1", nativeQuery = true)
+    DriverSchedule getDriverScheduleByRentalId(String rental_id);
+
+    @Query(value = "SELECT * FROM DriverSchedule WHERE driver_nic=?1", nativeQuery = true)
+    List<DriverSchedule> findDriverScheduleByDriver_nic(String driver_nic);
+}

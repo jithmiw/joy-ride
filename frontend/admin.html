@@ -42,7 +42,7 @@
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-link text-decoration-none nav-link active fw-semibold"
-                                id="manage-cars"
+                                id="manage-vehicles"
                                 type="button">Vehicles
                         </button>
                     </li>
@@ -103,7 +103,7 @@
                         <div class="navbar-brand ms-2 fs-4">AVAILABLE VEHICLES</div>
                     </div>
                     <div class="d-flex flex-column align-items-center mt-4 mb-4">
-                        <div class="fs-3 text-center" id="availableCars">0</div>
+                        <div class="fs-3 text-center" id="availableVehicles">0</div>
                     </div>
                 </div>
                 <div class="bg-white ms-sm-2 me-sm-2 mb-3 shadow" style="width: 100%; border-radius: 30px">
@@ -112,7 +112,7 @@
                         <div class="navbar-brand ms-2 fs-4">RESERVED VEHICLES</div>
                     </div>
                     <div class="d-flex flex-column align-items-center mt-4 mb-4">
-                        <div class="fs-3 text-center" id="reservedCars">0</div>
+                        <div class="fs-3 text-center" id="reservedVehicles">0</div>
                     </div>
                 </div>
             </div>
@@ -292,18 +292,18 @@
         </div>
     </section>
     <!--VEHICLES SECTION-->
-    <section id="cars">
+    <section id="vehicles">
         <div class="container-fluid mt-5 mb-5 pt-4">
             <div class="navbar navbar-expand-lg d-flex flex-column flex-sm-row justify-content-between"
                  style="background-color: #e3e3e3">
                 <div class="navbar-brand ms-2">Vehicles</div>
                 <form class="d-flex ms-2 me-2" role="search">
-                    <input aria-label="Search" class="form-control me-2" id="searchCar" placeholder="Search"
+                    <input aria-label="Search" class="form-control me-2" id="searchVehicle" placeholder="Search"
                            type="search">
-                    <button class="btn btn-outline-secondary" id="btnSearchCar" type="button">Search</button>
+                    <button class="btn btn-outline-secondary" id="btnSearchVehicle" type="button">Search</button>
                 </form>
             </div>
-            <form class="row g-3 mt-0 me-0 ms-0 mb-5 bg-white" id="carForm">
+            <form class="row g-3 mt-0 me-0 ms-0 mb-5 bg-white" id="vehicleForm">
                 <div class="col-md-3">
                     <label class="form-label" for="inputRegNo">Registration Number</label>
                     <input class="form-control" id="inputRegNo" name="reg_no" type="text">
@@ -395,15 +395,15 @@
                     <input class="form-control" id="inputInterior" name="image_four" type="file">
                 </div>
                 <div class="d-flex flex-column flex-sm-row justify-content-center mt-4">
-                    <button class="btn btn-dark mt-1 mb-1 me-sm-2 ms-sm-2" id="saveCar" type="button">ADD</button>
-                    <button class="btn text-white mt-1 mb-1 me-sm-2 ms-sm-2" id="updateCar"
+                    <button class="btn btn-dark mt-1 mb-1 me-sm-2 ms-sm-2" id="saveVehicle" type="button">ADD</button>
+                    <button class="btn text-white mt-1 mb-1 me-sm-2 ms-sm-2" id="updateVehicle"
                             style="background-color: #7f7f7f;"
                             type="button">UPDATE
                     </button>
-                    <button class="btn mt-1 mb-1 me-sm-2 ms-sm-2" id="deleteCar" style="background-color: #c2c2c2;"
+                    <button class="btn mt-1 mb-1 me-sm-2 ms-sm-2" id="deleteVehicle" style="background-color: #c2c2c2;"
                             type="button">DELETE
                     </button>
-                    <button class="btn mt-1 mb-1 me-sm-2 ms-sm-2" id="viewCars" style="background-color: #e7e7e7;"
+                    <button class="btn mt-1 mb-1 me-sm-2 ms-sm-2" id="viewVehicles" style="background-color: #e7e7e7;"
                             type="button">VIEW ALL VEHICLES
                     </button>
                 </div>
@@ -427,7 +427,7 @@
                     <th class="text-white" scope="col">Status</th>
                 </tr>
                 </thead>
-                <tbody class="table-light" id="tblCars" style="overflow-y:auto;">
+                <tbody class="table-light" id="tblVehicles" style="overflow-y:auto;">
                 </tbody>
             </table>
         </div>
@@ -675,5 +675,10 @@
 <script crossorigin="anonymous"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+        src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="./assets/js/admin.js"></script>
+<script src="./assets/js/util/validations.js"></script>
 </body>
 </html>

@@ -144,17 +144,17 @@
             <input class="form-control" id="search-return-date" type="date">
           </div>
           <div class="row-12 mb-3">
-            <button class="btn btn-dark" id="searchCar" type="button">SEARCH</button>
+            <button class="btn btn-dark" id="searchVehicle" type="button">SEARCH</button>
           </div>
         </form>
         <div class="ms-1">
-          <img alt="car img" class="img-fluid" src="assets/img/black-car.jpg">
+          <img alt="vehicle img" class="img-fluid" src="assets/img/black-car.jpg">
         </div>
       </div>
-      <div class="container-fluid d-flex flex-row flex-wrap justify-content-evenly d-none" id="carCards">
+      <div class="container-fluid d-flex flex-row flex-wrap justify-content-evenly d-none" id="vehicleCards">
         <div class="card mb-5" style="width: 20rem;">
           <div class="card-header fw-bold">Luxury</div>
-          <img alt="car-img" class="card-img-top" src="assets/img/black-car.jpg" style="height: 190px">
+          <img alt="vehicle-img" class="card-img-top" src="assets/img/black-car.jpg" style="height: 190px">
           <div class="card-body">
             <h5 class="card-title mb-3">BMW i8</h5>
             <span class="transType btn btn-outline-dark pe-2 ps-2 pt-1 pb-1 mb-2"
@@ -167,7 +167,7 @@
                   style="font-size: 13px; cursor: text">Free km for a Day :</span>
             <span class="freeKmMonth btn btn-outline-dark pe-2 ps-2 pt-1 pb-1 mb-2"
                   style="font-size: 13px; cursor: text">Free km for a Month :</span>
-            <span class="btn btn-outline-dark pe-2 ps-2 pt-1 pb-1 mb-2 d-none car-reg-no" id="regNo"
+            <span class="btn btn-outline-dark pe-2 ps-2 pt-1 pb-1 mb-2 d-none vehicle-reg-no" id="regNo"
                   style="font-size: 13px; cursor: text">Reg No :</span>
           </div>
           <ul class="list-group list-group-flush">
@@ -218,13 +218,13 @@
                       </div>
                     </div>
                     <button class="carousel-control-prev" data-bs-slide="prev"
-                            data-bs-target="#carCarousel" type="button">
+                            data-bs-target="#vehicleCarousel" type="button">
                                             <span aria-hidden="true"
                                                   class="carousel-control-prev-icon bg-secondary"></span>
                       <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" data-bs-slide="next"
-                            data-bs-target="#carCarousel" type="button">
+                            data-bs-target="#vehicleCarousel" type="button">
                                             <span aria-hidden="true"
                                                   class="carousel-control-next-icon bg-secondary"></span>
                       <span class="visually-hidden">Next</span>
@@ -256,7 +256,7 @@
                     </div>
                     <div class="col-md-6">
                       <label class="form-label">Registration No</label>
-                      <input class="form-control reg-no" name="car_reg_no" readonly type="text">
+                      <input class="form-control reg-no" name="vehicle_reg_no" readonly type="text">
                     </div>
                     <div class="col-md-6">
                       <label class="form-label">Customer Nic</label>
@@ -303,7 +303,7 @@
                       </select>
                     </div>
                     <div class="modal-footer col-12 me-auto pe-2">
-                      <button class="btn btn-dark me-0 rentCar" type="button">MAKE RESERVATION
+                      <button class="btn btn-dark me-0 rentVehicle" type="button">MAKE RESERVATION
                       </button>
                     </div>
                   </form>
@@ -367,6 +367,9 @@
 <script crossorigin="anonymous"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+        src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./assets/js/customer.js"></script>
 <script src="./assets/js/util/validations.js"></script>
 </body>

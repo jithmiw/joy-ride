@@ -109,7 +109,7 @@ function getAllReservations() {
             if (res.data != null) {
                 for (let r of res.data) {
                     let rentalId = r.rental_id;
-                    let carRegNo = r.car_reg_no;
+                    let vehicleRegNo = r.vehicle_reg_no;
                     let pickUpDate = r.pick_up_date;
                     let returnDate = r.return_date;
                     let pickUpTime = r.pick_up_time;
@@ -127,7 +127,7 @@ function getAllReservations() {
                     if (rentalStatus === "Rental") {
                         rentalStatus = "Pending";
                     }
-                    let row = "<tr><td>" + rentalId + "</td><td>" + carRegNo + "</td><td>" + pickUpDate + "</td>" +
+                    let row = "<tr><td>" + rentalId + "</td><td>" + vehicleRegNo + "</td><td>" + pickUpDate + "</td>" +
                         "<td>" + returnDate + "</td><td>" + pickUpTime + "</td><td>" + returnTime + "</td>" +
                         "<td>" + pickUpVenue + "</td><td>" + returnVenue + "</td><td>" + driverStatus + "</td><td>" + rentalStatus + "</td>" +
                         "<td>" + reservedDate + "</td><td>" + button + "</td></tr>";
@@ -204,21 +204,21 @@ function getDriver(driverNic) {
     });
 }
 
-let carCards = $("#carCards");
-$('#searchCar').click(function () {
+let vehicleCards = $("#vehicleCards");
+$('#searchVehicle').click(function () {
     let pickUpDate = $("#search-pick-up-date").val();
     let returnDate = $("#search-return-date").val();
-    let carCount = 0;
+    let vehicleCount = 0;
     $.ajax({
         url: baseUrl + "rentalDetail?pick_up_date=" + pickUpDate + "&return_date=" + returnDate,
         success: function (res) {
             if (res.data != null) {
-                carCards.removeClass("d-none");
-                carCards.addClass("d-block");
-                var card = $("#carCards > div:nth-child(1)").clone();
-                carCards.empty();
+                vehicleCards.removeClass("d-none");
+                vehicleCards.addClass("d-block");
+                var card = $("#vehicleCards > div:nth-child(1)").clone();
+                vehicleCards.empty();
                 for (let c of res.data) {
-                    carCount++;
+                    vehicleCount++;
                     let regNo = c.reg_no;
                     let brand = c.brand;
                     let type = c.type;
@@ -233,19 +233,19 @@ $('#searchCar').click(function () {
                     let ldwPayment = c.ldw_payment;
 
                     var newCard = card.clone();
-                    newCard.find('.car-reg-no').attr("id", "regNo" + carCount);
-                    newCard.find('.see-img-modal').attr("id", "seeImgsModal" + carCount);
-                    newCard.find('.reservation-modal').attr("id", "reservationModal" + carCount);
-                    newCard.find('.btn-img').attr("data-bs-target", "#seeImgsModal" + carCount);
-                    newCard.find('.btn-reservation').attr("data-bs-target", "#reservationModal" + carCount);
-                    newCard.find('.carousel').attr("id", "carCarousel" + carCount);
-                    newCard.find('.carousel-control-prev').attr("data-bs-target", "#carCarousel" + carCount);
-                    newCard.find('.carousel-control-next').attr("data-bs-target", "#carCarousel" + carCount);
-                    loadCarImages(regNo, newCard);
+                    newCard.find('.vehicle-reg-no').attr("id", "regNo" + vehicleCount);
+                    newCard.find('.see-img-modal').attr("id", "seeImgsModal" + vehicleCount);
+                    newCard.find('.reservation-modal').attr("id", "reservationModal" + vehicleCount);
+                    newCard.find('.btn-img').attr("data-bs-target", "#seeImgsModal" + vehicleCount);
+                    newCard.find('.btn-reservation').attr("data-bs-target", "#reservationModal" + vehicleCount);
+                    newCard.find('.carousel').attr("id", "vehicleCarousel" + vehicleCount);
+                    newCard.find('.carousel-control-prev').attr("data-bs-target", "#vehicleCarousel" + vehicleCount);
+                    newCard.find('.carousel-control-next').attr("data-bs-target", "#vehicleCarousel" + vehicleCount);
+                    loadVehicleImages(regNo, newCard);
                     newCard.find('.modal-title').text(brand);
                     newCard.find('.card-header').text(type);
                     newCard.find('.card-title').text(brand);
-                    newCard.find('#regNo' + carCount).text(regNo);
+                    newCard.find('#regNo' + vehicleCount).text(regNo);
                     newCard.find('.transType').text("Transmission Type : " + transType);
                     newCard.find('.noOfPassengers').text("Passengers : " + noOfPassengers);
                     newCard.find('.fuelType').text(fuelType);
@@ -255,27 +255,27 @@ $('#searchCar').click(function () {
                     newCard.find('.monthlyRate').text("Monthly Rate(Rs.) : " + monthlyRate);
                     newCard.find('.extraKmPrice').text("Price per Extra km(Rs.) : " + extraKmPrice);
                     newCard.find('.ldwPayment').text("Loss Damage Waiver Payment(Rs.) : " + ldwPayment);
-                    newCard.find('#reservationForm').attr("id", "#reservationForm" + carCount);
-                    carCards.append(newCard);
+                    newCard.find('#reservationForm').attr("id", "#reservationForm" + vehicleCount);
+                    vehicleCards.append(newCard);
                 }
                 bindClickEventsToButtons();
             } else {
-                carCards.removeClass("d-block");
-                carCards.addClass("d-none");
-                alert("No cars available for the time duration you searched for");
+                vehicleCards.removeClass("d-block");
+                vehicleCards.addClass("d-none");
+                alert("No vehicles available for the time duration you searched for");
             }
         },
         error: function () {
-            carCards.removeClass("d-block");
-            carCards.addClass("d-none");
-            alert("No cars available for the time duration you searched for");
+            vehicleCards.removeClass("d-block");
+            vehicleCards.addClass("d-none");
+            alert("No vehicles available for the time duration you searched for");
         }
     });
 });
 
-function loadCarImages(reg_no, newCard) {
+function loadVehicleImages(reg_no, newCard) {
     $.ajax({
-        url: baseUrl + "carImageDetail/" + reg_no,
+        url: baseUrl + "vehicleImageDetail/" + reg_no,
         success: function (res) {
             newCard.find('.card-img-top').attr("src", baseUrl + res.data.image_one);
             newCard.find('.carousel-inner > div:nth-child(1) > img').attr("src", baseUrl + res.data.image_one);
@@ -314,7 +314,7 @@ function generateNewId(reservationModalId) {
 }
 
 function bindClickEventsToButtons() {
-    $('.rentCar').on('click', function () {
+    $('.rentVehicle').on('click', function () {
         let rentalId;
         let rentalDTO = {};
         let bankSlip = $(this).closest('form').find('.bank-slip')[0].files[0];
@@ -369,7 +369,6 @@ function clearReservationForm() {
     disableBackButton();
 }
 
-// log out
 $("#logOut").click(function () {
     if (confirm('Are sure you want to logout?')) {
         window.location.href = "index.html";
